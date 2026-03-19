@@ -1,0 +1,113 @@
+# Arknights txwy Gacha Analyze / 明日方舟繁中服尋訪紀錄分析 (Node.js & Firebase Edition)
+
+## Warning / 警告
+
+* This project is not affiliated with, endorsed by, or authorized by the game developers or publishers (such as Hypergryph, Longcheng, Yostar, or Studio Montagne). This project involves web scraping, and **anyone using this project does so at their own risk**. The author makes **no guarantees** that using this project does not violate any terms of service or laws in your jurisdiction. The author also **does not guarantee** that the use of this project will not lead to personal data leaks. The author **assumes no responsibility** for any damage or loss resulting from the use of this project, and **offers no implied warranties** of any kind. This project is provided **for academic research and personal use only**; **commercial use or redistribution is strictly prohibited**.
+* 本專案與遊戲開發商或發行商（如鷹角網路、龍成網路、悠星網路或蒙塔山工作室）無任何關聯，也未經其授權。本專案屬於爬蟲，任何使用本專案的人士，須自行承擔一切風險，專案作者不保證使用本專案不會違反任何使用條款或任何地區的法律法規，專案作者不保證使用本專案不會造成任何個人資料的洩漏，專案作者不會負責任何因使用本專案而引致之損失，專案作者不會作出任何默示的擔保。本專案僅供學術研究與個人用途，禁止用於任何商業用途或轉售。
+
+* Due to the instability of the record merging mechanism, please **manually back up** your `visit_records.json` and `visit_logs.json` to prevent older records from being overwritten.
+* 由於新舊紀錄合併機制的不穩定性，請**自行備份** `visit_records.json`, `visit_logs.json` 以防舊紀錄被覆蓋。
+
+---
+
+## Features / 功能
+
+* **Modern Serverless Architecture**: Fully migrated from Python/Flask to Node.js/Express, deployed on Firebase Functions (2nd Gen) and Firebase Hosting, providing excellent scalability and extremely low maintenance costs.
+* **Modern Serverless Architecture / 現代化無伺服器架構**: 全面從 Python/Flask 遷移至 Node.js / Express，並部署於 Firebase Functions (2nd Gen) 與 Firebase Hosting，提供極佳的擴展性與極低的維護成本。
+
+* **Database Integration**: Uses Firebase Firestore to securely store user gacha records, bypassing traditional file limiting arrays, allowing dynamic merging and updating across devices.
+* **Database Integration / 資料庫整合**: 使用 Firebase Firestore 安全儲存用戶的抽卡紀錄 (JSON Stringified Array 以突破寫入限制)，不再依賴本地端檔案 I/O，能動態合併與更新跨設備的老紀錄。
+
+* **Dynamic Frontend**: Utilizes the EJS template engine and completely upgrades the original backend-generated Python Matplotlib pie charts to real-time frontend rendering with Chart.js, supporting responsive layouts for both mobile and desktop.
+* **Dynamic Frontend / 動態前端介面**: 採用 EJS 模板引擎，並將原先後端生成的 Python Matplotlib 圓餅圖，全面升級為前端即時渲染的 Chart.js，支援手機與電腦的響應式 (Responsive) 排版。
+
+* **Enhanced Analytics**: Advanced analysis interface supporting layered collapsing of consecutive pull histories, "pity" accumulation statistics across gacha pools, and complete export functionality.
+* **Enhanced Analytics / 進階資料分析**: 更進階的分析介面，支援連續抽出歷史的分層折疊、跨卡池的「已墊」累積抽數統計，以及完整的匯出 (Export) 功能。
+
+* **Extension Ecosystem**: Fully integrated with the developed Chromium extension "One-Click Token Extractor", perfectly solving the high-barrier process of manually opening F12 developer tools to copy data.
+* **Extension Ecosystem / 擴充功能生態**: 完全整合開發的 Chromium 擴充功能「一鍵截取 Token」，完美解決必須手動開啟 F12 開發者工具複製資料的高門檻流程。
+
+* **Security & Cost Control**: Implements `robots.txt` and `express-rate-limit` to defend against abnormal traffic, and sets the maximum server execution instances (`maxInstances: 3`), ensuring no extra paid quota is consumed under the Blaze billing plan.
+* **Security & Cost Control / 安全與成本控制**: 實裝 `robots.txt`、`express-rate-limit` 防禦異常流量，並設定伺服器最高執行實例 (`maxInstances: 3`)，保障 Blaze 計費方案下不花費任何額外的付費額度。
+
+---
+
+## Prerequisites / 前置需求
+
+Before setting up, please ensure your system has the following environments and tools installed:
+在開始架設之前，請確保您的系統已安裝下列環境與工具：
+
+* **Node.js** (version >= 22 / 版本 >= 22)
+* **npm** (usually included with Node.js / 通常隨附於 Node.js)
+* **Firebase CLI** (`npm install -g firebase-tools`)
+* A Google account with Firebase enabled and Firestore database permissions activated (requires switching the project to the Blaze plan).
+* 已開通 Firebase 並啟用 Firestore 資料庫權限的 Google 帳號 (須將專案切換至 Blaze 方案)。
+
+---
+
+## Usage / 使用方法
+
+### 1. Downloading Copyrighted Assets / 取得版權資產
+
+Based on copyright protection principles, the repository of this project **does not directly contain any official artwork, fonts, or original CSS**. After cloning this project for the first time, you **must first execute the copyright asset fetch script**.
+The script will automatically go to the official server to fetch all necessary public static resources and synthesize patches locally.
+
+基於版權保護原則，本專案的儲存庫中**未直接包含任何官方美術圖片、字體與原始 CSS**。當您首次複製此專案後，**必須先執行版權資產抓取腳本**。
+腳本會自動前往官方伺服器抓取所有所需的公開靜態資源，並在當地合成補丁。
+
+```bash
+# Execute this script in the root directory of the project
+# 在專案根目錄中執行此腳本
+bash asset_download.sh
+```
+
+> **Note:** After successful execution, you will see the complete `your.css`, `assets/images`, and `assets/fonts` folders automatically generated under `public/css/`, and you can begin development or deployment.
+> **注意：** 執行完成後，您會看到 `public/css/` 底下自動長出完整的 `your.css`、`assets/images` 和 `assets/fonts` 資料夾，即可開始進行開發或部署。
+
+### 2. Install Dependencies / 安裝依賴庫
+
+Server-side code is enclosed in the `functions/` folder. Please ensure you have installed these Node modules.
+
+伺服器端代碼被封裝在 `functions/` 資料夾下，請確保您安裝了這些 Node 模組。
+
+```bash
+cd functions
+npm install
+cd ..
+```
+
+### 3. Local Emulator Testing / 本地端模擬與測試
+
+If you need to develop or preview locally, Firebase provides a very convenient emulator feature.
+
+如果您需要開發或是進行本地預覽，Firebase 提供了非常方變得模擬器功能。
+
+```bash
+# Ensure you are in the Firebase-arknightsgacha root directory
+# 請確保您位於 Firebase-arknightsgacha 根目錄
+firebase emulators:start --only functions,hosting
+```
+
+After startup, open the local URL provided by the terminal in your browser (usually `http://localhost:5000` or `http://127.0.0.1:5000`) to test all connections and rendering results at any time.
+
+啟動完畢後，在瀏覽器打開終端機提示的本機網址 (通常為 `http://localhost:5000` 或 `http://127.0.0.1:5000`) 即可隨時測試所有連線與渲染結果。
+
+### 4. Deployment / 雲端部署
+
+When all tests are confirmed green, simply run a single command to push the full stack to Google Cloud for official operation.
+
+當所有的測試都確認綠燈，只需一行指令即可把全端推上 Google Cloud 進行正式營運。
+
+```bash
+# Default deployment region is asia-east1 (Taiwan)
+# 預設部署區域為 asia-east1 (台灣)
+firebase deploy
+```
+
+If you later only modify the frontend interface (ejs, css) and want to speed up the deployment process, you can add parameters to specify the deployment target.
+
+若您後續僅修改前端介面 (ejs, css)，想要加速部署流程，您可以加上參數指定部署部位。
+
+```bash
+firebase deploy --only hosting
+```
