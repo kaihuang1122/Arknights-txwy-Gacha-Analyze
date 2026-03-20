@@ -26,54 +26,65 @@
 <   bottom: -7.625rem;
 ---
 >   bottom: -5.625rem;
-1409c1409
+1386a1387,1392
+>     position: fixed;
+>     top: 0;
+>     left: 0;
+>     bottom: 0;
+>     z-index: 9999;
+>     overflow-y: auto;
+1390c1396
+<     width: 100%;
+---
+>     width: 100vw;
+1409c1415
 <     height: 100vh;
 ---
 >     height: 20vh;
-1472,1474c1472
+1472,1474c1478
 <   transition:
 <     transform 0.3s,
 <     color 0.3s;
 ---
 >   transition: transform 0.3s, color 0.3s;
-1480,1482c1478
+1480,1482c1484
 <   transition:
 <     transform 0.3s,
 <     color 0.3s;
 ---
 >   transition: transform 0.3s, color 0.3s;
-1485,1486c1481
+1485,1486c1487
 <   background:
 <     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAABqCAYAAACRf5xDAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMvSURBVHgB7d3LbRRLFIDhGtsje0kIhHKdwQ0BdizJADIgBMwOlmRACGSAyYDlLGam6UEMMtjz6tfUqfo+qaWzq9UvtY76MUtM7urq6m3TNG/SdO7n8/ntYrG4T1TlMjG59Xr95fLyctaO/6VpPGvP/P/6+vrzcrn8kaiGwM9E5ExB4GckcsYm8DMTOWMSeAZEzlgEngmRMwaBZ0TkDE3gmRE5QxJ4hkTOUASeKZEzBIFnTOT0JfDMiZw+BB6AyOlK4EGInC4EHojIOZXAgxE5pxB4QCLnWAIPSuQcQ+CBiZxDBB6cyNlH4AUQObsIvBDnirxpmg/tvEhkSeAFOUPkn9vAPyayJfDCTBj5h9Vq9SKRNYEXaILIxR2EwAs1YuTiDkTgBRshcnEHI/DCDRi5uAMSeAUGiFzcQQm8Ej0iF3dgAq9Ih8jFDdFs/k/eht4cuO4SENOByO8SENuOyO8SUIZ/Ir9LFMWSrXIPFm/fLdQAAAAAAADgLC4uLt7d3Nw8T0BZ2rjf/37g5pvIoSAP4m5EDgV5Im6RQwn2xC1yiOyIuEUOEZ0Qt8ghkg5xixwi6BG3yDuYJZjIJu7ZbPYi9Xc/n89vF4vFfWIvgTOJAePeEvkRBM7oRoh7S+QHCJxRjRj3lsj3EDijmSDuLZHv4KOLjGLzVlgb96s0jWfr9fp50zSfEn+5SDCwNu43bdyv00Tas76uVquXiUfcojOo33G/TRPZxL1cLm/b8UfiEYEzGHHnR+AMQtx5Eji9iTtfAqcXcedN4HQm7vwJnE7EHYPAOZm44xA4JxF3LALnaOKOR+AcRdwxCZyDxB2XwNlL3LEJnJ3EHZ/AeZK4yyBwHhF3OQTOX8RdFoHzh7jLI3B+EXeZBI64Cybwyom7bAKvmLjLJ/BKibsOAq+QuOsh8MqIuy4Cr4i46yPwSoi7TgKvgLjrJfDCibtuAi+YuBF4ocTNhsALJG62BF4YcfOQwAsibv4l8EKIm6cIvADiZheBBydu9hF4YOLmEIEHJW6OIfCAxM2xBB6MuDmFwAMRN6cSeBDipguBByBuuhJ45sRNHwLPmLjpS+CZEjdD+Al8wxH29BHY8gAAAABJRU5ErkJggg==)
 ---
 >   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAABqCAYAAACRf5xDAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMvSURBVHgB7d3LbRRLFIDhGtsje0kIhHKdwQ0BdizJADIgBMwOlmRACGSAyYDlLGam6UEMMtjz6tfUqfo+qaWzq9UvtY76MUtM7urq6m3TNG/SdO7n8/ntYrG4T1TlMjG59Xr95fLyctaO/6VpPGvP/P/6+vrzcrn8kaiGwM9E5ExB4GckcsYm8DMTOWMSeAZEzlgEngmRMwaBZ0TkDE3gmRE5QxJ4hkTOUASeKZEzBIFnTOT0JfDMiZw+BB6AyOlK4EGInC4EHojIOZXAgxE5pxB4QCLnWAIPSuQcQ+CBiZxDBB6cyNlH4AUQObsIvBDnirxpmg/tvEhkSeAFOUPkn9vAPyayJfDCTBj5h9Vq9SKRNYEXaILIxR2EwAs1YuTiDkTgBRshcnEHI/DCDRi5uAMSeAUGiFzcQQm8Ej0iF3dgAq9Ih8jFDdFs/k/eht4cuO4SENOByO8SENuOyO8SUIZ/Ir9LFMWSrXIPFm/fLdQAAAAAAADgLC4uLt7d3Nw8T0BZ2rjf/37g5pvIoSAP4m5EDgV5Im6RQwn2xC1yiOyIuEUOEZ0Qt8ghkg5xixwi6BG3yDuYJZjIJu7ZbPYi9Xc/n89vF4vFfWIvgTOJAePeEvkRBM7oRoh7S+QHCJxRjRj3lsj3EDijmSDuLZHv4KOLjGLzVlgb96s0jWfr9fp50zSfEn+5SDCwNu43bdyv00Tas76uVquXiUfcojOo33G/TRPZxL1cLm/b8UfiEYEzGHHnR+AMQtx5Eji9iTtfAqcXcedN4HQm7vwJnE7EHYPAOZm44xA4JxF3LALnaOKOR+AcRdwxCZyDxB2XwNlL3LEJnJ3EHZ/AeZK4yyBwHhF3OQTOX8RdFoHzh7jLI3B+EXeZBI64Cybwyom7bAKvmLjLJ/BKibsOAq+QuOsh8MqIuy4Cr4i46yPwSoi7TgKvgLjrJfDCibtuAi+YuBF4ocTNhsALJG62BF4YcfOQwAsibv4l8EKIm6cIvADiZheBBydu9hF4YOLmEIEHJW6OIfCAxM2xBB6MuDmFwAMRN6cSeBDipguBByBuuhJ45sRNHwLPmLjpS+CZEjdD+Al8wxH29BHY8gAAAABJRU5ErkJggg==)
-1497,1499c1492
+1497,1499c1498
 <   transition:
 <     opacity 0.3s,
 <     transform 0.3s;
 ---
 >   transition: opacity 0.3s, transform 0.3s;
-1570c1563
+1570c1569
 <   height: 100vh;
 ---
 >   height: 20vh;
-1609c1602
+1609c1608
 <   background: url(https://web-static.hg-cdn.com/arknights-tw/user/assets/images/pc-bg.0a3825.png)
 ---
 >   background: url(assets/images/pc-bg.0a3825.png)
-1615c1608
+1615c1614
 <     background: url(https://web-static.hg-cdn.com/arknights-tw/user/assets/images/pc-bg.0a3825.png)
 ---
 >     background: url(assets/images/pc-bg.0a3825.png)
-1631c1624
+1631c1630
 <   height: 100vh;
 ---
 >   height: 20vh;
-1643c1636
+1643c1642
 <     height: 100vh;
 ---
 >     height: 20vh;
-1678,1681c1671,1673
+1678,1681c1677,1679
 <   -webkit-transition:
 <     height 0.3s ease 0.3s,
 <     width 0.3s ease 0.3s,
@@ -82,7 +93,7 @@
 >   -webkit-transition: height 0.3s ease 0.3s, width 0.3s ease 0.3s,
 >     opacity 0.3s linear, -webkit-transform 0.05s linear;
 >   transition: height 0.3s ease 0.3s, width 0.3s ease 0.3s, opacity 0.3s linear,
-1683,1691c1675
+1683,1691c1681
 <   transition:
 <     height 0.3s ease 0.3s,
 <     width 0.3s ease 0.3s,
@@ -94,7 +105,7 @@
 <     opacity 0.3s linear,
 ---
 >   transition: height 0.3s ease 0.3s, width 0.3s ease 0.3s, opacity 0.3s linear,
-1693,1698c1677,1678
+1693,1698c1683,1684
 <   transition:
 <     height 0.3s ease 0.3s,
 <     width 0.3s ease 0.3s,
@@ -104,20 +115,19 @@
 ---
 >   transition: height 0.3s ease 0.3s, width 0.3s ease 0.3s, opacity 0.3s linear,
 >     transform 0.05s linear, -webkit-transform 0.05s linear;
-1708,1710c1688
+1708,1714c1694
 <   -webkit-transition:
+<     height 0.3s ease 0.3s,
+<     width 0.3s ease 0.3s,
+<     opacity 0.3s linear;
+<   transition:
 <     height 0.3s ease 0.3s,
 <     width 0.3s ease 0.3s,
 ---
 >   -webkit-transition: height 0.3s ease 0.3s, width 0.3s ease 0.3s,
-1712,1715c1690
-<   transition:
-<     height 0.3s ease 0.3s,
-<     width 0.3s ease 0.3s,
-<     opacity 0.3s linear;
----
+1715a1696
 >   transition: height 0.3s ease 0.3s, width 0.3s ease 0.3s, opacity 0.3s linear;
-1805,1807c1780,1782
+1805,1807c1786,1788
 <   -webkit-user-select: none;
 <   -moz-user-select: none;
 <   user-select: none;
@@ -125,7 +135,7 @@
 >   -webkit-user-select: text;
 >   -moz-user-select: text;
 >   user-select: text;
-1810,1869d1784
+1810,1869d1790
 <   font-family: SourceHanSans-Normal;
 <   font-style: normal;
 <   font-weight: 400;
@@ -186,7 +196,7 @@
 <       format("svg");
 < }
 < @font-face {
-1873,1882c1788
+1873,1882c1794
 <   src: url(https://web-static.hg-cdn.com/arknights-tw/user/assets/fonts/Oswald-Bold.3c3420.ttf);
 <   src:
 <     url(https://web-static.hg-cdn.com/arknights-tw/user/assets/fonts/Oswald-Bold.acfa95.eot?#iefix)
@@ -199,5 +209,5 @@
 <       format("svg");
 ---
 >   src: url(assets/fonts/Oswald-Bold.3c3420.ttf);
-1915d1820
+1915d1826
 <   font-family: SourceHanSans-Normal;

@@ -78,6 +78,10 @@ app.get('/login', (req, res) => {
     res.render('login', { flash: null });
 });
 
+app.get('/privacy', (req, res) => {
+    res.render('privacy');
+});
+
 app.post('/login', async (req, res) => {
     const method = req.body.method;
     
