@@ -1,15 +1,5 @@
 # Arknights txwy Gacha Analyze / 明日方舟繁中服尋訪紀錄分析 (Node.js & Firebase Edition)
 
-## Warning / 警告
-
-* This project is not affiliated with, endorsed by, or authorized by the game developers or publishers (such as Hypergryph, Longcheng, Yostar, or Studio Montagne). This project involves web scraping, and **anyone using this project does so at their own risk**. The author makes **no guarantees** that using this project does not violate any terms of service or laws in your jurisdiction. The author also **does not guarantee** that the use of this project will not lead to personal data leaks. The author **assumes no responsibility** for any damage or loss resulting from the use of this project, and **offers no implied warranties** of any kind. This project is provided **for academic research and personal use only**; **commercial use or redistribution is strictly prohibited**.
-* 本專案與遊戲開發商或發行商（如鷹角網路、龍成網路、悠星網路或蒙塔山工作室）無任何關聯，也未經其授權。本專案屬於爬蟲，任何使用本專案的人士，須自行承擔一切風險，專案作者不保證使用本專案不會違反任何使用條款或任何地區的法律法規，專案作者不保證使用本專案不會造成任何個人資料的洩漏，專案作者不會負責任何因使用本專案而引致之損失，專案作者不會作出任何默示的擔保。本專案僅供學術研究與個人用途，禁止用於任何商業用途或轉售。
-
-* Due to the instability of the record merging mechanism, please **manually back up** your `visit_records.json` and `visit_logs.json` to prevent older records from being overwritten.
-* 由於新舊紀錄合併機制的不穩定性，請**自行備份** `visit_records.json`, `visit_logs.json` 以防舊紀錄被覆蓋。
-
----
-
 ## Features / 功能
 
 * **Modern Serverless Architecture**: Fully migrated from Python/Flask to Node.js/Express, deployed on Firebase Functions (2nd Gen) and Firebase Hosting, providing excellent scalability and extremely low maintenance costs.
@@ -80,7 +70,7 @@ cd ..
 
 If you need to develop or preview locally, Firebase provides a very convenient emulator feature.
 
-如果您需要開發或是進行本地預覽，Firebase 提供了非常方變得模擬器功能。
+如果您需要開發或是進行本地預覽，Firebase 提供了非常方便的模擬器功能。
 
 ```bash
 # Ensure you are in the Firebase-arknightsgacha root directory
@@ -111,3 +101,19 @@ If you later only modify the frontend interface (ejs, css) and want to speed up 
 ```bash
 firebase deploy --only hosting
 ```
+
+---
+
+## Disclaimer & Copyright / 免責與版權聲明
+
+1. This project is not affiliated with, endorsed by, or authorized by the game's developers or publishers (including Hypergryph, Longcheng, Ariel, Yostar, or Studio Montagne).
+1. 本專案與遊戲開發商或發行商（如鷹角網路、龍成網路、艾瑞爾網路、悠星網路或蒙塔山工作室）無任何關聯，也未經其授權。
+
+2. Use this project entirely at your own risk. The author does not guarantee that using this project won't violate any terms of service or local laws, nor does the author guarantee protection against data leaks or provide any implied warranties. The author shall not be held liable for any damages or losses resulting from the use of this project.
+2. 任何使用本專案的人士，須自行承擔一切風險，專案作者不保證使用本專案不會違反任何機構的使用條款或任何地區的法律規範，專案作者不保證使用本專案不會造成任何個人資料的洩漏，專案作者不會負責任何因使用本專案而引致之損失，專案作者不會作出任何默示的擔保。
+
+3. The original source code of this project is licensed under the MIT License. However, all in-game assets, concepts, and intellectual properties associated with "Arknights" are strictly for personal and academic research. Any commercial use or resale utilizing the "Arknights" IP is strictly prohibited. Users engaging in such infringing behavior will bear full legal responsibility.
+3. 本專案的原創底層程式碼採 MIT 授權開源。但專案內包含或擷取的任何「明日方舟」相關資源、介面與概念，僅供學術與個人研究，**嚴禁將本專案基於明日方舟的型態進行任何商業用途或轉售**。任何侵犯版權的商業行為須由使用者自行負擔完全之法律責任。
+
+4. All in-game images, animations, audio, original text, styles, patterns, and selected layout designs used within the project are solely for the purpose of better presenting game data. The copyrights of these assets belong to Shanghai Hypergryph Network Technology Co., Ltd., Longcheng Network Co., Ltd., Ariel Co., Limited, GRYPH FRONTIER PTE. LTD., or their affiliated companies.
+4. 專案內使用的遊戲圖片、動畫、音訊、文字原文、風格、樣式與部分版面設計，僅用於更好地表現遊戲資料，其版權屬於上海鷹角網路科技有限公司、龍成網路有限公司、艾瑞爾網路股份有限公司、GRYPH FRONTIER PTE. LTD 或以上之關聯公司。
