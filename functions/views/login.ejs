@@ -91,9 +91,9 @@
       </div>
     </div>
 
-    <!-- 使用說明 -->
+    <!-- 最新消息 -->
     <div class="x82bAA">
-      <div class="tshJ_L">使用說明</div>
+      <div class="tshJ_L">最新消息</div>
       <div class="ab1yWq">
         <div class="wYL2n2 Q25EOd"></div>
         <div class="wYL2n2 xW0Sk9"></div>
@@ -101,49 +101,18 @@
         <div class="wYL2n2 Mric6f"></div>
         <div class="Xo6v7v">
           <div style="margin-bottom: 0.8rem; background-color: rgba(27, 209, 254, 0.15); border: 1px solid #1bd1fe; border-radius: 0.25rem; padding: 0.6rem; color: #fff;">
-            <strong>✨ 新方法已發布！安裝<a href="https://chromewebstore.google.com/detail/arknights-tw-gacha-helper/kidldjkohinbhdkihhjnjahhbchpcfdb" target="_blank" style="color: #1bd1fe; text-decoration: underline; padding: 0 0.2rem;">瀏覽器插件</a>，一鍵完成紀錄獲取。</strong>
+            <strong>🛠️ 終末地尋訪記錄正在火熱開發中，敬請期待！</strong>
           </div>
-          <div>
-            首次登入必須使用「方法一：Cookie + Token（紀錄獲取）」或使用瀏覽器插件，以下是手動獲取的使用說明：<br />
-            請在<a href="https://ak.gryphline.com/user/visit" target="_blank">官網</a>登入後，使用 F12 開啟開發人員工具，隨後在「應用程式／Application」找到「Cookie」中「ak-user-tw」的值，<br />
+          <div style="margin-bottom: 0.8rem; background-color: rgba(27, 209, 254, 0.15); border: 1px solid #1bd1fe; border-radius: 0.25rem; padding: 0.6rem; color: #fff;">
+            <strong>✨ 新方法已發布！安卓用戶可安裝<a href="https://github.com/kaihuang1122/Arknights-TW-Gacha-Helper-App/releases" target="_blank" style="color: #1bd1fe; text-decoration: underline; padding: 0 0.2rem;">專屬APP</a>，一鍵完成紀錄獲取。</strong>
           </div>
-        </div>
-      </div>
-      <div class="ab1yWq">
-        <div class="wYL2n2 Q25EOd"></div>
-        <div class="wYL2n2 xW0Sk9"></div>
-        <div class="wYL2n2 m8kOmo"></div>
-        <div class="wYL2n2 Mric6f"></div>
-        <div class="Xo6v7v">
-          <div>
-            隨後將該值貼上到「ak-user-tw Cookie」欄位中。<br />
-            接著在「主控台／Console」欄目中貼上下方的文字：
-            <div style="display: inline-flex; align-items: center; margin: 0.1rem 0;">
-              <span></span>
-              <code id="roleTokenCode" style="background: #333; padding: 0.2rem 0.4rem; border-radius: 0.25rem; color: #e0e0e0; margin: 0 0.1rem;">
-                copy(JSON.parse(window.localStorage.ONE_ACCOUNT_ROLE_META)['token']);
-              </code>
-              <button id="copyTokenBtn" style="padding: 0.25rem 0.5rem; background: #10d1fe; border: none; border-radius: 0.25rem; color: #000; cursor: pointer; font-size: 10;">
-                複製
-              </button>
-            </div>
-            <script>
-              document.getElementById("copyTokenBtn").addEventListener("click", function () {
-                const text = document.getElementById("roleTokenCode").innerText;
-                navigator.clipboard.writeText(text).then(function () {
-                  console.log("已複製到剪貼簿");
-                  const btn = document.getElementById("copyTokenBtn");
-                  btn.textContent = "已複製";
-                });
-              });
-            </script>
-            <br />
-            按下 Enter 鍵後，「X-Role-Token」的值將被複製到剪貼簿，隨後將該值貼上到「X-Role-Token」欄位中。<br />
-            （首次使用時瀏覽器可能會要求在「主控台／Console」輸入「允許貼上／allow pasting」或其他詞句後始可貼上文字。）
+          <div style="margin-bottom: 0.8rem; background-color: rgba(27, 209, 254, 0.15); border: 1px solid #1bd1fe; border-radius: 0.25rem; padding: 0.6rem; color: #fff;">
+            <strong>✨ 新方法已發布！電腦用戶可安裝<a href="https://chromewebstore.google.com/detail/arknights-tw-gacha-helper/kidldjkohinbhdkihhjnjahhbchpcfdb" target="_blank" style="color: #1bd1fe; text-decoration: underline; padding: 0 0.2rem;">瀏覽器插件</a>，一鍵完成紀錄獲取。</strong>
           </div>
         </div>
       </div>
     </div>
+
 
     <!-- 登入區塊容器 -->
     <div class="login-wrapper">
@@ -207,6 +176,82 @@
       </div>
     </div>
 
+    <!-- 使用說明 -->
+    <div class="x82bAA">
+      <div class="tshJ_L">使用說明</div>
+      <div class="ab1yWq">
+        <div class="wYL2n2 Q25EOd"></div>
+        <div class="wYL2n2 xW0Sk9"></div>
+        <div class="wYL2n2 m8kOmo"></div>
+        <div class="wYL2n2 Mric6f"></div>
+        <div class="Xo6v7v">
+          <div>
+            首次使用必須先獲取或上傳，以下是方法一（網站獲取）的使用說明：（需要瀏覽器的開發人員工具）<br />
+            請在<a href="https://ak.gryphline.com/user/visit" target="_blank">官網</a>登入後，使用 F12
+            開啟開發人員工具，隨後在「應用程式／Application」找到「Cookie」中「ak-user-tw」的值。<br />
+            接著在「主控台／Console」欄目中貼上下方的文字：
+            <div
+              style="
+                display: inline-flex;
+                align-items: center;
+                margin: 0.1rem 0;
+              "
+            >
+              <span></span>
+              <code
+                id="roleTokenCode"
+                style="
+                  background: #333;
+                  padding: 0.2rem 0.4rem;
+                  border-radius: 0.25rem;
+                  color: #e0e0e0;
+                  margin: 0 0.1rem;
+                "
+              >
+                copy(JSON.parse(window.localStorage.ONE_ACCOUNT_ROLE_META)['token']);
+              </code>
+              <button
+                id="copyTokenBtn"
+                style="
+                  padding: 0.25rem 0.5rem;
+                  background: #10d1fe;
+                  border: none;
+                  border-radius: 0.25rem;
+                  color: #000;
+                  cursor: pointer;
+                  font-size: 10;
+                "
+              >
+                複製
+              </button>
+            </div>
+            <script>
+              document
+                .getElementById("copyTokenBtn")
+                .addEventListener("click", function () {
+                  const text =
+                    document.getElementById("roleTokenCode").innerText;
+                  navigator.clipboard.writeText(text).then(function () {
+                    navigator.clipboard.writeText(text).then(function () {
+                      console.log("已複製到剪貼簿");
+                      const btn = document.getElementById("copyTokenBtn");
+                      // 將「複製」改為「已複製」
+                      btn.textContent = "已複製";
+                    });
+                    // alert("已複製");
+                  });
+                });
+            </script>
+            <br />
+            按下 Enter 鍵後，「X-Role-Token」的值將被複製到剪貼簿。<br />
+            （首次使用時瀏覽器可能會要求在「主控台／Console」輸入「允許貼上／allow
+            pasting」或其他詞句後始可貼上文字。）
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!-- 注意事項 -->
     <div class="x82bAA">
       <div class="tshJ_L">注意事項</div>
@@ -245,7 +290,7 @@
 
     <!-- 近期更新內容 -->
     <div class="x82bAA">
-      <div class="tshJ_L">近期更新內容</div>
+      <div class="tshJ_L">歷史更新內容</div>
       <div class="ab1yWq">
         <div class="wYL2n2 Q25EOd"></div>
         <div class="wYL2n2 xW0Sk9"></div>
@@ -271,9 +316,10 @@
         <div class="Xo6v7v">
           <div>6. 實作對標準尋訪與中堅尋訪的已累計未出金抽數統計</div>
           <div>7. 在無法找到卡池名稱時，顯示卡池ID</div>
-          <div>8. 新增卡池標題與折疊</div>
+          <div>8. 新增卡池標題，可供折疊與篩選</div>
           <div>9. 優化統計資訊設計風格</div>
-          <div>10. 部分修復移動端的顯示效果</div>
+          <div>10. 完全修復移動端的顯示效果</div>
+          <div>11. 實作瀏覽器插件、APP、隱私權政策</div>
         </div>
       </div>
     </div>
